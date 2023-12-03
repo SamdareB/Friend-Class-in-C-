@@ -1,0 +1,59 @@
+/*
+
+Friend class:
+
+Friend class are the class that can access private and protected members of other class
+in which it declare as a friend.
+
+-we can declare friend class using key word "friend"
+
+Syntax:
+
+friend class class_name;
+
+class base{
+	//statements;
+	
+	friend class f;
+};
+
+class f{
+	//statements;
+};
+
+*/
+
+//Implimentation of Friend class in C++.
+
+#include <iostream>
+using namespace std;
+
+class base{
+	private:
+	int a;
+	protected:
+	int b;
+	//costructor
+	base(){
+		a = 5;
+		b = 10;
+	}
+	friend class f;
+};
+class f{
+	public:
+	void desplay(base &x){
+		
+		cout<<x.a<<endl;
+		cout<<x.b<<endl;
+		
+	}
+};
+	
+int main() {
+   base object1;
+   f object2;
+   object2.despaly();
+   
+	return 0;
+}
